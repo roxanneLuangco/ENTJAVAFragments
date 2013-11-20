@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Fragments: Chapter 2</title>
+
+<script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgHandBG, vimgS, vimgU, vimgI, vimgC, vimgI2, vimgD, vimgE;
+ 	var vimgWord, vimgQstn;
+	var imgx = 0, imgy = 0;
+	
+
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+  
+ 		vimgHandBG = document.getElementById("HandBG"); 
+ 		vimgS = document.getElementById("S"); 
+ 		vimgU = document.getElementById("U"); 
+ 		vimgI = document.getElementById("I"); 
+ 		vimgC = document.getElementById("C"); 
+ 		vimgI2 = document.getElementById("I2"); 
+ 		vimgD = document.getElementById("D"); 
+ 		vimgE = document.getElementById("E");
+ 		
+ 		vimgQstn = document.getElementById("QstnMrk");
+ 		vimgWord = document.getElementById("Word");
+ 		 		
+ 		vcon.drawImage(vimgHandBG, 0, 0, 800, 600);	
+ 		vcon.drawImage(vimgWord, 100, 120, 600, 100);
+ 		
+		setInterval("animateWord()", 1000); 		
+			
+	}    
+
+	var ctr = 0;
+	function animateWord()
+	{
+	
+		ctr++;
+		
+		if (ctr == 0){
+			
+			vcon.drawImage(vimgWord, 100, 120, 600, 100);
+	}
+		if (ctr == 1){
+
+			vcon.drawImage(vimgS, 50, 350, 100, 210);
+	}
+		if (ctr == 2){
+
+			vcon.drawImage(vimgU, 150, 350, 100, 210);
+	}
+		if (ctr == 3){
+
+			vcon.drawImage(vimgI, 250, 350, 100, 210);		
+	}
+		if (ctr == 4){
+
+			vcon.drawImage(vimgC, 350, 350, 100, 210);
+	}
+		if (ctr == 5){
+
+			vcon.drawImage(vimgI2, 450, 350, 100, 210);
+	}
+		if (ctr == 6){
+
+			vcon.drawImage(vimgD, 550, 350, 100, 210);
+	}
+		if (ctr == 7){
+
+			vcon.drawImage(vimgE, 650, 350, 100, 210);
+	}
+		if (ctr == 8){
+
+			ctr = 0;
+			vcon.drawImage(vimgQstn, 750, 470, 40, 80);
+	}
+		
+		
+	}
+	
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Backgrounds -->
+<img style="display: none" id="HandBG" alt="Chapter 2" src="images/chapter2/scene5/S5_HandBG.jpg">
+
+<!-- Words -->
+<img style="display: none" id="S" alt="Chapter 2" src="images/chapter2/scene5/C2S5_S.jpg">
+<img style="display: none" id="U" alt="Chapter 2" src="images/chapter2/scene5/C2S5_U.jpg">
+<img style="display: none" id="I" alt="Chapter 2" src="images/chapter2/scene5/C2S5_I.jpg">
+<img style="display: none" id="C" alt="Chapter 2" src="images/chapter2/scene5/C2S5_C.jpg">
+<img style="display: none" id="I2" alt="Chapter 2" src="images/chapter2/scene5/C2S5_I2.jpg">
+<img style="display: none" id="D" alt="Chapter 2" src="images/chapter2/scene5/C2S5_D.jpg">
+<img style="display: none" id="E" alt="Chapter 2" src="images/chapter2/scene5/C2S5_E.jpg">
+
+<img style="display: none" id="QstnMrk" alt="Chapter 2" src="images/chapter2/scene5/C2S5_Mark.jpg">
+<img style="display: none" id="Word" alt="Chapter 2" src="images/chapter2/scene5/C2S5_Suicide1.jpg">
+
+
+<!-- Audio -->
+
+
+<!-- Characters -->
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

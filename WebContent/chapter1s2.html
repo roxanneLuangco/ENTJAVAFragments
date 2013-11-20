@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 1</title>
+
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon, vimgBG, vimg1, vimg2;
+ 	var imgx = 0, imgy = 0;
+ 
+ 	         
+         function loadImage() 
+         {
+         	           	
+         	vcanvas = document.getElementById("anicanvas");
+             vcon = vcanvas.getContext("2d");
+             
+             vimgBG = document.getElementById("canvasBG");
+             vimg1 = document.getElementById("Matthew");
+             vimg2 = document.getElementById("Bubble");
+             
+             vword = document.getElementById("Word");
+             
+         	vcon.drawImage(vimgBG, 0, 0, 800, 600); 
+         	vcon.drawImage(vimg1, imgx, imgy, 367, 490, 20, 20, 367, 470); 
+         	         	
+         	 setInterval("animate()", 1500);      	
+         	
+         }
+         
+         var counter = 0;
+         
+         function animate()
+         {
+         	counter++;   
+         	    	
+         	if (counter > 3)
+         		
+         		counter = 0;
+         		imgx = counter * 367;   		
+     		 		        		
+         		vcon.drawImage(vimgBG, 0, 0, 800, 600); 
+         		vcon.drawImage(vimg1, imgx, imgy, 367, 490, 20, 20, 367, 470);
+
+              	if (counter == 2)
+               
+              		vcon.drawImage(vimg2, 410,35, 304,120); 
+              	
+              	if (counter == 3)
+              		
+               		vcon.drawImage(vword, 340, 550, 400, 35);               		
+              		
+         }  
+             
+</script>
+
+
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:8px; border-style:inset; border-color: black;" id ="anicanvas"> This Browser does not support HTML 5.</canvas>
+
+<!-- Background -->
+<img style="display: none" id="canvasBG" alt="Scene 2" src="images/chapter1/scene2/HouseMatt.jpg">
+
+<!-- Characters -->
+<img style="display: none" id="Matthew" alt="Scene 2" src="images/chapter1/scene2/C1S2_Matthew.png">
+
+<!-- Words and Bubbles -->
+<img style="display: none" id="Bubble" alt="Scene 2" src="images/chapter1/scene2/C1S2_bub1.png">
+<img style="display: none" id="Word" alt="Scene 2" src="images/chapter1/scene2/C1S2_word.png">
+
+<!-- Audio -->
+<audio src="music/SummerCrickets.mp3" loop="true" autoplay="true"></audio>
+
+
+<!-- Description -->
+<p class="first" style="font-size: 20px; font-style: giorgia; color: silver;">
+That same night, her groom, Mr. Matthew Sirhc couldn't sleep because of too much excitement and nervousness. 
+He was so excited since tomorrow's going to be the day that he had been waiting for. </p>
+
+<!-- Button -->
+<center>
+
+<button id = button1 onClick="location.href='Chap1Scene1.html'">Previous: Scene 1'></button>
+
+<button id = button2 onClick="location.href='Chap1Scene3.html'">Next: Scene 3'></button>
+</center>
+
+
+</body>
+</html>

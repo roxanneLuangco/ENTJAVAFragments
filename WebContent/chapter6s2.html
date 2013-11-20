@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 6</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgS1, vimgS2, vimgS3, vimgS4, vimgS5;
+ 	var vimgH1, vimgH2, vimgH3, vimg4;
+	var imgx = 0, imgy = 0;
+	
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		
+ 		vimgS1 = document.getElementById("S2_Solve1");
+ 		vimgS2 = document.getElementById("S2_Solve2");
+ 		vimgS3 = document.getElementById("S2_Solve3");
+ 		vimgS4 = document.getElementById("S2_Solve4");
+ 		vimgS5 = document.getElementById("S2_Solve5");
+ 		
+ 		vimgH1 = document.getElementById("S2_Hint1");
+ 		vimgH2 = document.getElementById("S2_Hint2");
+ 		vimgH3 = document.getElementById("S2_Hint3");
+ 		vimgH4 = document.getElementById("S2_Hint4");
+
+ 		
+		vcon.drawImage(vimgS1, 0, 0, 800, 600);	
+
+		setInterval("animate()", 1500);	
+	}
+		
+	var ctr = 0;
+	function animate()
+	{
+		ctr++;
+		
+		if (ctr == 0)
+		{	
+			vcon.drawImage(vimgS1, 0, 0, 800, 600);		
+		}	
+		if (ctr == 1)
+		{	
+			vcon.drawImage(vimgS2, 0, 0, 800, 600);		
+		}	
+		if (ctr == 2)
+		{	
+			vcon.drawImage(vimgS3, 0, 0, 800, 600);			
+		}	
+		if (ctr == 3)
+		{	
+			vcon.drawImage(vimgS4, 0, 0, 800, 600);			
+		}
+		if (ctr == 4)
+		{	
+			vcon.drawImage(vimgS5, 0, 0, 800, 600);			
+			Hint();
+		}
+	}
+	
+	function Hint()
+	{
+		vcon.drawImage(vimgS5, 0, 0, 800, 600);
+		vcon.drawImage(vimgH1, 260, 150, 320, 50);
+		setInterval("animateHint()", 1800);
+	}
+	
+	var Hctr = 0;
+	function animateHint()
+	{
+		Hctr++;
+		
+		if (Hctr == 0)
+		{	
+
+			vcon.drawImage(vimgH1, 260, 150, 320, 50);		
+		}	
+		if (Hctr == 1)
+		{	
+	
+			vcon.drawImage(vimgH2, 170, 210, 500, 90);		
+		}	
+		if (Hctr == 2)
+		{	
+
+			vcon.drawImage(vimgH3, 260, 310, 320, 50);			
+		}	
+		if (Hctr == 3)
+		{	
+
+			vcon.drawImage(vimgH4, 260, 370, 320, 50);		
+		}	
+		if (Hctr == 4)
+		{	
+			Hctr = 0;		
+			vcon.drawImage(vimgS5, 0, 0, 800, 600);
+			vcon.drawImage(vimgH1, 260, 150, 320, 50);
+		}
+	}
+	
+
+
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+<img style="display: none" id="S2_Solve1" alt="Chapter 6" src="images/chapter6/scene2/S2_Solve1.jpg">
+<img style="display: none" id="S2_Solve2" alt="Chapter 6" src="images/chapter6/scene2/S2_Solve2.jpg">
+<img style="display: none" id="S2_Solve3" alt="Chapter 6" src="images/chapter6/scene2/S2_Solve3.jpg">
+<img style="display: none" id="S2_Solve4" alt="Chapter 6" src="images/chapter6/scene2/S2_Solve4.jpg">
+<img style="display: none" id="S2_Solve5" alt="Chapter 6" src="images/chapter6/scene2/S2_Solve5.jpg">
+
+<!-- Hint -->
+<img style="display: none" id="S2_Hint1" alt="Chapter 6" src="images/chapter6/scene2/S2_Hint1.jpg">
+<img style="display: none" id="S2_Hint2" alt="Chapter 6" src="images/chapter6/scene2/S2_Hint2.jpg">
+<img style="display: none" id="S2_Hint3" alt="Chapter 6" src="images/chapter6/scene2/S2_Hint3.jpg">
+<img style="display: none" id="S2_Hint4" alt="Chapter 6" src="images/chapter6/scene2/S2_Hint4.jpg">
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+<!-- Character -->
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 1</title>
+ 
+
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon, vimgWedd, vimgMatt;
+ 	var imgx = 0, imgy = 0;
+ 
+ 	function loadImage() 
+ 	{
+ 		
+ 		vcanvas = document.getElementById("anicanvas");
+    	vcon = vcanvas.getContext("2d");
+     
+    	vimgWedd = document.getElementById("WeddingBG");
+    	vimgMatt = document.getElementById("WeddingMatt");
+ 
+		vcon.drawImage(vimgWedd, imgx, imgy, 433, 250, 5, 5, 800, 600);  
+    
+    	    	
+    	var stop = setInterval("animate()", 1000)
+}	
+ 	
+ 	var ctr = 0;
+    function animate()
+    {
+    	ctr++;       		
+    	    	
+    	if (ctr > 13)
+    		
+    		ctr = 0;
+    	
+    		imgx = ctr * 433; 		
+    		vcon.drawImage(vimgWedd, imgx, imgy, 433, 250, 5, 5, 800, 600); 
+    		
+    	if (ctr == 13)
+		
+    			clearInterval(stop);
+        		vcon.drawImage(vimgMatt,0, 0, 800, 600); 
+    	
+    }
+ 	
+	   
+    
+</script>
+
+
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:8px; border-style:inset; border-color: black;" id ="anicanvas"> This Browser does not support HTML 5.</canvas>
+
+<!-- Backgrounds -->
+<img style="display: none" id="WeddingBG" alt="Scene 3" src="images/chapter1/scene3/WeddTrans.jpg">
+<img style="display: none" id="WeddingMatt" alt="Scene 3" src="images/chapter1/scene3/WeddingMatt.jpg">
+
+
+<!-- Description -->
+<p class="first" style="font-size: 20px; font-style: giorgia; color: silver;">
+Finally, the long wait is over. It's finally February 14th, their long-awaited wedding day. 
+
+<br>
+
+On that day, the church of St. Peter was filled with cheers. The crowd was all excited, the choir was singing cheerfully, and the groom was patiently and nervously waiting at the altar. 
+The only missing piece of this perfect moment was the bride, who's now standing outside of the big door. 
+
+<br>
+
+Slowly the door opened, and to everyone's surprise, it's not the bride herself. 
+Instead, it was the wedding organizer saying that the bride was nowhere to be found. 
+
+</p>
+
+<!-- Button -->
+
+<center>
+
+<button id = button1 onClick="location.href='Chap1Scene2.html'">Previous: Scene 3'></button>
+
+<button id = button2 onClick="location.href='Chap1Scene4.html'">Next: Scene 4'></button>
+</center>
+
+
+
+</body>
+</html>

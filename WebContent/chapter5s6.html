@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 4</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgmaid1, vimgmaid2, vimgmaid3, vimgmaid4;
+	var imgx = 0, imgy = 0;
+
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		vimgmaid1 = document.getElementById("S6_maid1");
+ 		vimgmaid2 = document.getElementById("S6_maid2");
+ 		vimgmaid3 = document.getElementById("S6_maid3");
+ 		vimgmaid4 = document.getElementById("S6_maid4");
+ 		
+ 		
+		vcon.drawImage(vimgmaid1, 0, 0, 800, 600);	
+		
+		setInterval("animate()", 1000);	
+	}
+		
+	var ctr = 0;
+	function animate()
+	{
+		ctr++;
+		
+		if (ctr == 0)
+		{	
+			vcon.drawImage(vimgmaid1, 0, 0, 800, 600);	
+		}	
+		if (ctr == 1)
+		{	
+			vcon.drawImage(vimgmaid2, 0, 0, 800, 600);	
+		}	
+		if (ctr == 2)
+		{	
+			vcon.drawImage(vimgmaid3, 0, 0, 800, 600);		
+		}	
+		if (ctr == 3)
+		{	
+			ctr = 0;
+			vcon.drawImage(vimgmaid4, 0, 0, 800, 600);		
+		}	
+		
+	}
+	
+	
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+<!-- Character -->
+<img style="display: none" id="S6_maid1" alt="Chapter 5" src="images/chapter5/scene6/S6_Maid1.jpg">
+<img style="display: none" id="S6_maid2" alt="Chapter 5" src="images/chapter5/scene6/S6_Maid2.jpg">
+<img style="display: none" id="S6_maid3" alt="Chapter 5" src="images/chapter5/scene6/S6_Maid3.jpg">
+<img style="display: none" id="S6_maid4" alt="Chapter 5" src="images/chapter5/scene6/S6_Maid4.jpg">
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

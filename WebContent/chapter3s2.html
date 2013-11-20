@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Fragments: Chapter 3</title>
+
+<script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgForest, vimgBat;
+	var imgx = 0, imgy = 0;
+	
+
+	function loadImage() 
+	{
+	
+		
+		vcanvas = document.getElementById("anicanvas");
+		vcon = vcanvas.getContext("2d");
+		
+ 		vimgForest = document.getElementById("ForestBG"); 
+ 		vimgBat = document.getElementById("ForestBat");
+ 		
+ 		vcon.drawImage(vimgForest, 0, 0, 800, 600);	
+ 		vcon.drawImage(vimgBat, imgx, imgy, 102, 102, 10, 10, 150, 150);	  
+	
+		setInterval("animate()", 1000);
+    
+	}
+
+		var counter = 0;
+		var cx  = 10;
+
+		function animate()
+		{
+				counter++;
+				cx += 10;
+			
+			if (counter > 7)
+			{		
+				counter = 0;
+				imgx = counter * 102;
+		
+				vcon.drawImage(vimgForest, 0, 0, 800, 600);	
+        		vcon.drawImage(vimgBat, imgx, imgy, 102, 102, cx, 10, 150, 150);	
+        		
+			}
+		}
+		
+		
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Backgrounds -->
+<img style="display: none" id="ForestBG" alt="Chapter 3" src="images/chapter3/scene2/S2Forest_2.jpg">
+<img style="display: none" id="ForestBat" alt="Chapter 3" src="images/chapter3/scene2/S2_Bat.png">
+
+
+<!-- Words -->
+
+<!-- Audio -->
+
+<!-- Characters -->
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

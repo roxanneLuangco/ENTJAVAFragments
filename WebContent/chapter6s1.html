@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 6</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgRoom, VimgFly;
+	var imgx = 0, imgy = 0;
+	
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		
+ 		vimgRoom = document.getElementById("S1_Room");
+ 		vimgFly = document.getElementById("S1_Fly");
+
+ 		
+		vcon.drawImage(vimgRoom, 0, 0, 800, 600);	
+		vcon.drawImage(vimgFly, imgx, imgy, 200, 200, 50, 200, 400, 400);
+		
+		setInterval("animateFly()", 500);	
+	}
+	
+	var ctr = 0;
+
+	function animateFly()
+	{
+		ctr++;
+		
+		if (ctr > 6)
+			
+			ctr = 0;
+			imgx = ctr * 200;		
+			
+			vcon.drawImage(vimgRoom, 0, 0, 800, 600);	
+			vcon.drawImage(vimgFly, imgx, imgy, 200, 200, 50, 200, 400, 400);
+	}
+	
+	
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+<img style="display: none" id="S1_Room" alt="Chapter 6" src="images/chapter6/scene1/S1_Room.jpg">
+
+<!-- Butterfly -->
+<img style="display: none" id="S1_Fly" alt="Chapter 6" src="images/chapter6/scene1/S1_Fly.png">
+
+
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+<!-- Character -->
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

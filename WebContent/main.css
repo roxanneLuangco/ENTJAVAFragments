@@ -1,0 +1,87 @@
+@CHARSET "ISO-8859-1";
+
+    p {
+        color: red;	
+    }
+
+
+    body {
+	    background-image: url("images/MainBG.jpg");
+        border: 8px;
+        border-color: gray;
+        border-style: groove;
+        background-repeat: repeat;
+     }
+
+    h2 { 
+        margin-top: 40px;   
+        align: center
+    }
+    
+    /*-------MENU BAR--------*/
+    
+    #options,
+ 
+    #options ul {
+        list-style: none;
+    }
+    
+    #options {
+        float: left;
+    }
+   
+    #options > li {
+        float: left;
+    }
+
+    #options li a {
+        display: block;
+        height: 7em;
+        line-height: 8em;
+        padding: 0 1.5em;
+        text-decoration: none;
+    }
+
+    #options ul {
+        position: absolute;
+        display: none;
+        z-index: 999;
+    }
+    
+    #options ul li a {
+        width: 200px;
+    }
+
+    #options li:hover ul {
+        display: block;
+    }
+    
+    /* --------Main Menu----------*/
+    
+    #options {
+    font-family: sans-serif;
+    font-size: 15px;
+    background: #000;
+}
+#options > li > a {
+    color: #fff;
+    font-weight: bold;
+}
+#options > li:hover > a {
+    background: #680000;
+    color: #fff;
+}
+ 
+    /* -------- Sub menu---------*/
+
+    #options ul {
+        background: #680000;
+    }
+    
+    #options ul li a {
+        color: #fff;
+    }
+
+    #options ul li:hover a {
+        background: #000;
+    }

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 4</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgFrame, vimgWall, vimgRm1, vimgRm2, vimgRm3, vimgRm4;
+	var imgx = 0, imgy = 0;
+
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+  		
+ 		vimgWall = document.getElementById("Wall");
+ 		vimgFrame = document.getElementById("Frame");
+ 		
+ 		vimgRm1 = document.getElementById("Room1");
+ 		vimgRm2 = document.getElementById("Room2");
+ 		vimgRm3 = document.getElementById("Room3");
+ 		vimgRm4 = document.getElementById("Room4");
+	 		
+		vcon.drawImage(vimgRm1, 0, 0, 800, 600);
+		setInterval("changeBG()", 1500);
+	
+	}
+	
+	var ctr = 0;
+	function changeBG()
+	{
+		ctr++;
+		
+		if (ctr == 0)
+		{
+			vcon.drawImage(vimgRm1, 0, 0, 800, 600);
+		}
+		if (ctr == 1)
+		{
+			vcon.drawImage(vimgRm2, 0, 0, 800, 600);
+		}
+		if (ctr == 2)
+		{
+			vcon.drawImage(vimgRm3, 0, 0, 800, 600);
+		}
+		if (ctr == 3)
+		{
+			vcon.drawImage(vimgWall, 0, 0, 800, 600);
+			vcon.drawImage(vimgFrame, 0, 0, 413, 245, 150, 52, 413, 245);
+		}
+		if (ctr == 4)
+		{
+			vcon.drawImage(vimgRm1, 0, 0, 800, 600);
+		}
+		if (ctr == 5)
+		{
+			vcon.drawImage(vimgWall, 0, 0, 800, 600);
+			vcon.drawImage(vimgFrame, 0, 0, 413, 245, 150, 52, 413, 245);
+		}
+		if (ctr == 6)
+		{
+			vcon.drawImage(vimgRm3, 0, 0, 800, 600);
+			animateFrame();
+		}
+	}
+	
+	function animateFrame()
+	{
+		vcon.drawImage(vimgWall, 0, 0, 800, 600);
+		vcon.drawImage(vimgFrame, imgx, imgy, 413, 245, 150, 52, 413, 245);
+		
+		setInterval("animate()", 1500);
+	}
+	
+	var counter = 0;
+	function animate()
+	{
+		counter++;
+		
+		if (counter > 2)
+			
+			counter = 0;
+			imgx = counter * 413;
+			
+			vcon.drawImage(vimgWall, 0, 0, 800, 600);
+			vcon.drawImage(vimgFrame, imgx, imgy, 413, 245, 150, 52, 413, 245);
+	
+	}
+	
+	
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Backgrounds -->
+<img style="display: none" id="Room1" alt="Chapter 4" src="images/chapter4/scene2/S2_Room1.jpg">
+<img style="display: none" id="Room2" alt="Chapter 4" src="images/chapter4/scene2/S2_Room2.jpg">
+<img style="display: none" id="Room3" alt="Chapter 4" src="images/chapter4/scene2/S2_Room3.jpg">
+<img style="display: none" id="Room4" alt="Chapter 4" src="images/chapter4/scene2/S2_Room4.jpg">
+<img style="display: none" id="Wall" alt="Chapter 4" src="images/chapter4/scene2/S2_WallDecor.jpg">
+
+
+<!-- Frame -->
+<img style="display: none" id="Frame" alt="Chapter 4" src="images/chapter4/scene2/S2_FramesHint.png">
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+
+<!-- Characters -->
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

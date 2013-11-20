@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 3</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon, vimgBG, vimgBird;
+ 	var vHand1, vHand2, vLetter1, vLetter2, vLetter3;
+ 	var vS1, vS2, vS3, vS4, vS5, vS6, vS7, vS8, vS9;
+	var imgx = 0, imgy = 0;
+	var Himgx = 0, Himgy = 0;
+	var Bimgx = 0, Bimgy = 0;
+
+	function loadImage() 
+	{
+				
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+  
+ 		vimgBG = document.getElementById("BG1"); 
+ 		
+ 		vHand1 = document.getElementById("hand1");
+ 		vHand2 = document.getElementById("hand2");
+ 		
+ 		vLetter1 = document.getElementById("Letter1");
+ 		vLetter2 = document.getElementById("Letter2");
+ 		vLetter3 = document.getElementById("Letter3");
+ 		
+ 		vS1 = document.getElementById("S4_1");
+ 		vS2 = document.getElementById("S4_2");
+ 		vS3 = document.getElementById("S4_3");
+ 		
+ 		vS4 = document.getElementById("S4_4");
+ 		vS5 = document.getElementById("S4_5");
+ 		vS6 = document.getElementById("S4_6");
+ 		vS7 = document.getElementById("S4_7");
+ 		vS8 = document.getElementById("S4_8");
+ 		vS9 = document.getElementById("S4_9");
+
+ 		
+		vcon.drawImage(vimgBG, 0, 0, 800, 600);
+		vcon.drawImage(vHand1, imgx, imgy, 800, 600, 0, 0, 700, 600);
+	
+		
+		setInterval("animateHand1()", 1100); 
+		
+	}   	
+	
+	var ctr = 0;
+	var count = 1;
+	function animateHand1()
+	{			
+		ctr++; 
+		count++;
+		
+		if (count > 0 & count < 7)	
+		{
+
+			imgx = ctr * 800;
+			
+			vcon.drawImage(vimgBG, 0, 0, 800, 600);
+			vcon.drawImage(vHand1, imgx, imgy, 800, 600, 0, 0, 700, 600);
+		}
+	
+		if (count == 5)	
+		{
+			vcon.drawImage(vS1, 0, 0, 800, 600);
+		}
+		
+		if (count == 6)	
+		{
+			vcon.drawImage(vS2, 0, 0, 800, 600);
+		}	
+		if (count == 7)	
+		{
+			vcon.drawImage(vS3, 0, 0, 800, 600);
+
+		}	
+		if (count == 8)	
+		{	
+			vcon.drawImage(vimgBG, 0, 0, 800, 600);
+			change();	
+		}	
+	}
+	
+	function change()
+	{
+		vcon.drawImage(vimgBG, 0, 0, 800, 600);
+		vcon.drawImage(vHand2, Himgx, Himgy, 800, 600, 0, 0, 700, 600);
+		setInterval("animateHand2()", 1100);
+	}
+	
+	var Hctr = 0;
+	var Hcount = 1;
+	var Bctr = 0;
+	function animateHand2()
+	{			
+		Hctr++; 
+		Bctr++;
+		Hcount++;
+		
+		if (Hcount > 0 & Hcount < 13)	
+		{
+			Himgx = Hctr * 800;  
+
+			vcon.drawImage(vimgBG, 0, 0, 800, 600);
+			vcon.drawImage(vHand2, Himgx, Himgy, 800, 600, 0, 0, 700, 600);
+		}
+	
+		if (Hcount == 5)	
+		{
+			vcon.drawImage(vS4, 0, 0, 800, 600);
+		}	
+		if (Hcount == 6)	
+		{
+			vcon.drawImage(vS5, 0, 0, 800, 600);
+		}	
+		if (Hcount == 7)	
+		{
+			vcon.drawImage(vS6, 0, 0, 800, 600);
+		}	
+		if (Hcount == 8)	
+		{
+			vcon.drawImage(vS7, 0, 0, 800, 600);
+		}	
+		if (Hcount == 9)	
+		{
+			vcon.drawImage(vS8, 0, 0, 800, 600);
+		}	
+		if (Hcount == 10)	
+		{
+			vcon.drawImage(vS9, 0, 0, 800, 600);
+		}	
+		if (Hcount == 11)	
+		{
+			vcon.drawImage(vimgBG, 0, 0, 800, 600);
+		}	
+		if (Hcount == 12)	
+		{
+			vcon.drawImage(vLetter1, 0, 0, 800, 600);
+		}	
+		if (Hcount == 13)	
+		{
+			vcon.drawImage(vLetter2, 0, 0, 800, 600);
+		}	
+		if (Hcount == 14)	
+		{
+			vcon.drawImage(vLetter3, 0, 0, 800, 600);
+		}		
+		
+	}
+	
+
+	
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black; margin-top: 50px;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Backgrounds -->
+<img style="display: none" id="BG1" alt="Chapter 3" src="images/chapter3/scene4/S4_BG1.jpg">
+
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+
+<!-- Hands -->
+<img style="display: none" id="hand1" alt="Chapter 3" src="images/chapter3/scene4/S4_Photo1.png">
+<img style="display: none" id="hand2" alt="Chapter 3" src="images/chapter3/scene4/S4_Photo2.png">
+
+
+<!-- Letter -->
+<img style="display: none" id="S4_4" alt="Chapter 3" src="images/chapter3/scene4/S4_4.jpg">
+<img style="display: none" id="S4_5" alt="Chapter 3" src="images/chapter3/scene4/S4_5.jpg">
+<img style="display: none" id="S4_6" alt="Chapter 3" src="images/chapter3/scene4/S4_6.jpg">
+<img style="display: none" id="S4_7" alt="Chapter 3" src="images/chapter3/scene4/S4_7.jpg">
+<img style="display: none" id="S4_8" alt="Chapter 3" src="images/chapter3/scene4/S4_8.jpg">
+<img style="display: none" id="S4_9" alt="Chapter 3" src="images/chapter3/scene4/S4_9.jpg">
+
+<!-- Sunny's Letter -->
+<img style="display: none" id="Letter1" alt="Chapter 3" src="images/chapter3/scene4/S4_14.jpg">
+<img style="display: none" id="Letter2" alt="Chapter 3" src="images/chapter3/scene4/S4_15.jpg">
+<img style="display: none" id="Letter3" alt="Chapter 3" src="images/chapter3/scene4/S4_16.jpg">
+
+<!-- Characters -->
+<img style="display: none" id="S4_1" alt="Chapter 3" src="images/chapter3/scene4/S4_1.jpg">
+<img style="display: none" id="S4_2" alt="Chapter 3" src="images/chapter3/scene4/S4_2.jpg">
+<img style="display: none" id="S4_3" alt="Chapter 3" src="images/chapter3/scene4/S4_3.jpg">
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

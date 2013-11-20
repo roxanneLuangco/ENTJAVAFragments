@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 6</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgTable, vimgBox;
+	var imgx = 0, imgy = 0;
+	
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		
+ 		vimgTable = document.getElementById("S4_Table");
+ 		vimgBox = document.getElementById("S4_Box");
+
+ 		
+		vcon.drawImage(vimgTable, 0, 0, 800, 600);	
+		vcon.drawImage(vimgBox, imgx, imgy, 350, 350, 300, 180, 350, 350);
+		
+		setInterval("animateBox()", 1500);	
+	}
+
+	
+	var ctr = 0;
+	function animateBox()
+	{
+		
+		ctr++;
+		
+		if (ctr > 4)
+			
+			ctr = 0;
+			imgx = ctr * 350;
+			
+			vcon.drawImage(vimgTable, 0, 0, 800, 600);
+			vcon.drawImage(vimgBox, imgx, imgy, 350, 350, 300, 180, 350, 350);
+	}
+	
+
+
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+<img style="display: none" id="S4_Table" alt="Chapter 6" src="images/chapter6/scene4/S4_Table.jpg">
+
+<!-- Words -->
+
+<!-- Box -->
+<img style="display: none" id="S4_Box" alt="Chapter 6" src="images/chapter6/scene4/S4_Box.png">
+
+
+
+<!-- Audio -->
+
+<!-- Character -->
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

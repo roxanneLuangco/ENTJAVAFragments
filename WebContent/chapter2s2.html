@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 3</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon, vimgBG;
+ 	var vH1, vH2, vH3, vH4, vH5, vH6, vH7, vH8, vH9;
+ 	var vTime, vMatt;
+	var imgx = 0, imgy = 0;
+
+
+	function loadImage() 
+	{
+				
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+  
+ 		vimgBG = document.getElementById("BG"); 
+ 		vTime = document.getElementById("Time"); 
+ 		vMatt = document.getElementById("Matt"); 
+ 		
+ 		vH1 = document.getElementById("Hand1");
+ 		vH2 = document.getElementById("Hand2");
+ 		vH3 = document.getElementById("Hand3");
+ 		vH4 = document.getElementById("Hand4");
+ 		vH5 = document.getElementById("Hand5");
+ 		vH6 = document.getElementById("Hand6");
+ 		vH7 = document.getElementById("Hand7");
+ 		vH8 = document.getElementById("Hand8");
+ 		vH9 = document.getElementById("Hand9");
+ 		
+ 				
+		vcon.drawImage(vimgBG, 0, 0, 800, 600);
+		vcon.drawImage(vMatt, 0, 0, 1000, 600);
+		vcon.drawImage(vTime, imgx, imgy, 400, 386, 0, 0, 400, 386); 
+		
+		setInterval("animate()", 900); 
+	
+	}
+
+	
+	var ctr = 0;
+	var count = 1;
+	function animate()
+	{			
+	ctr++; 
+	count++;
+	
+	if (count > 0 & count < 7)	
+	{
+
+		imgx = ctr * 400;
+		
+		vcon.drawImage(vimgBG, 0, 0, 800, 600);
+		vcon.drawImage(vMatt, 0, 0, 1000, 600);
+		vcon.drawImage(vTime, imgx, imgy, 400, 386, 0, 0, 400, 386); 
+	}
+	
+	if (count == 6)	
+	{
+		vcon.drawImage(vH1, 0, 0, 800, 600);
+		change();
+	}
+		
+}	
+	function change()
+	{
+		vcon.drawImage(vH1, 0, 0, 800, 600);
+		setInterval("animateHand()", 1200);
+	}
+	
+	var counter = 0;
+	function animateHand()
+	{			
+		
+		counter++;
+		
+		if (counter == 0)	
+		{
+			vcon.drawImage(vH1, 0, 0, 800, 600);
+		}	
+		if (counter == 1)	
+		{
+			vcon.drawImage(vH2, 0, 0, 800, 600);
+		}
+		if (counter == 2)	
+		{
+			vcon.drawImage(vH3, 0, 0, 800, 600);
+		}
+		if (counter == 3)	
+		{
+			vcon.drawImage(vH4, 0, 0, 800, 600);
+		}
+		if (counter == 4)	
+		{
+			vcon.drawImage(vH5, 0, 0, 800, 600);
+		}
+		if (counter == 5)	
+		{
+			vcon.drawImage(vH6, 0, 0, 800, 600);
+		}
+		if (counter == 6)	
+		{
+			vcon.drawImage(vH7, 0, 0, 800, 600);
+		}
+		if (counter == 7)	
+		{
+			vcon.drawImage(vH8, 0, 0, 800, 600);
+		}
+		if (counter == 8)	
+		{
+			vcon.drawImage(vH9, 0, 0, 800, 600);
+		}
+		
+	}
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black; margin-top: 50px;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Backgrounds -->
+<img style="display: none" id="BG" alt="Chapter 2" src="images/chapter2/scene2/C2S2_Wall.jpg">
+
+
+<!-- Time -->
+<img style="display: none" id="Time" alt="Chapter 2" src="images/chapter2/scene2/C2S2_Clock.png">
+
+
+<!-- Audio -->
+
+
+<!-- Phone / hand -->
+<img style="display: none" id="Hand1" alt="Chapter 2" src="images/chapter2/scene2/C2S2_hand1.jpg">
+<img style="display: none" id="Hand2" alt="Chapter 2" src="images/chapter2/scene2/C2S2_hand2.jpg">
+<img style="display: none" id="Hand3" alt="Chapter 2" src="images/chapter2/scene2/C2S2_hand3.jpg">
+<img style="display: none" id="Hand4" alt="Chapter 2" src="images/chapter2/scene2/C2S2_hand4.jpg">
+<img style="display: none" id="Hand5" alt="Chapter 2" src="images/chapter2/scene2/C2S2_hand5.jpg">
+<img style="display: none" id="Hand6" alt="Chapter 2" src="images/chapter2/scene2/C2S2_hand6.jpg">
+<img style="display: none" id="Hand7" alt="Chapter 2" src="images/chapter2/scene2/C2S2_hand7.jpg">
+<img style="display: none" id="Hand8" alt="Chapter 2" src="images/chapter2/scene2/C2S2_hand8.jpg">
+<img style="display: none" id="Hand9" alt="Chapter 2" src="images/chapter2/scene2/C2S2_hand9.jpg">
+
+<!-- Characters -->
+<img style="display: none" id="Matt" alt="Chapter 2" src="images/chapter2/scene2/C2S2_matt.png">
+
+
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

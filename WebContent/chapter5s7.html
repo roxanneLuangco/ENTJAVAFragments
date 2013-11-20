@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 5</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgCry, vimgTalk, vimgRoom;
+	var imgTx = 0, imgTy = 0;
+	
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		
+ 		vimgRoom = document.getElementById("S7_Room");
+ 		
+ 		vimgTalk = document.getElementById("S7_Talk");
+ 		vimgCry = document.getElementById("S7_Cry");
+
+ 		
+		vcon.drawImage(vimgRoom, 0, 0, 800, 600);	
+		vcon.drawImage(vimgCry, imgTx, imgTy, 333, 325, 230, 0, 550, 600);
+		
+		setInterval("animateTalk()", 500);	
+	}
+	
+	var Tctr = 0;
+	var counter = 1;
+	function animateTalk()
+	{
+		Tctr++;
+		counter++;
+		
+		if (counter > 0 & counter < 8)
+		
+			Tctr = 0;
+			imgTx = Tctr * 333;
+		
+			vcon.drawImage(vimgRoom, 0, 0, 800, 600);
+			vcon.drawImage(vimgTalk, imgTx, imgTy, 333, 325, 230, 0, 550, 600);
+		
+	
+		if (counter == 8)
+		
+			vcon.drawImage(vimgRoom, 0, 0, 800, 600);	
+			Cry();
+		
+					
+	}
+	
+	function cry()
+	{
+		vcon.drawImage(vimgRoom, 0, 0, 800, 600);
+		vcon.drawImage(vimgCry, imgCx, imgCy, 333, 325, 230, 0, 550, 600);
+		setInterval("animateCry", 500);
+	}
+	
+	var Cctr = 0;
+	var imgCx = 0, imgCy = 0;
+	function animateCry()
+	{
+		Cctr++;
+		
+		if (Cctr > 3)
+			
+			Tctr = 0;
+			imgCx = Tctr * 333;
+		
+			vcon.drawImage(vimgRoom, 0, 0, 800, 600);
+			vcon.drawImage(vimgCry, imgCx, imgCy, 333, 325, 230, 0, 550, 600);
+	}
+	
+	
+	
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+<img style="display: none" id="S7_Room" alt="Chapter 5" src="images/chapter5/scene7/S7_InvRoom.jpg">
+
+
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+<!-- Character -->
+<img style="display: none" id="S7_Talk" alt="Chapter 5" src="images/chapter5/scene7/S7_LianneTalk.png">
+<img style="display: none" id="S7_Cry" alt="Chapter 5" src="images/chapter5/scene7/S7_LianneCry.png">
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 7</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+	var vimgC1, vimgC2, vimgC3, vimgC4, vimgC5, vimgC6, vimgC7, vimgC8;
+	var imgx = 0, imgy = 0;
+	
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		
+ 		vimgC1 = document.getElementById("S1_C1");
+ 		vimgC2 = document.getElementById("S1_C2");
+ 		vimgC3 = document.getElementById("S1_C3");
+ 		vimgC4 = document.getElementById("S1_C4");
+ 		vimgC5 = document.getElementById("S1_C5");
+ 		vimgC6 = document.getElementById("S1_C6");
+ 		vimgC7 = document.getElementById("S1_C7");
+ 		vimgC8 = document.getElementById("S1_C8");
+
+ 		vcon.drawImage(vimgC1, 0, 0, 800, 600);
+		
+		setInterval("animate()", 800);	
+	}
+
+	
+	var ctr = 0;
+	function animate()
+	{
+		
+		ctr++;
+		
+		if (ctr == 0)
+		{	
+			vcon.drawImage(vimgC1, 0, 0, 800, 600);	
+		}	
+		if (ctr == 1)
+		{	
+			vcon.drawImage(vimgC2, 0, 0, 800, 600);	
+		}	
+		if (ctr == 2)
+		{	
+			vcon.drawImage(vimgC3, 0, 0, 800, 600);			
+		}	
+		if (ctr == 3)
+		{	
+			vcon.drawImage(vimgC4, 0, 0, 800, 600);		
+		}
+		if (ctr == 4)
+		{	
+			vcon.drawImage(vimgC5, 0, 0, 800, 600);	
+		}
+		if (ctr == 5)
+		{	
+			vcon.drawImage(vimgC6, 0, 0, 800, 600);	
+		}
+		if (ctr == 6)
+		{	
+			vcon.drawImage(vimgC7, 0, 0, 800, 600);
+		}
+		if (ctr == 7)
+		{	
+			ctr = 0;
+			vcon.drawImage(vimgC8, 0, 0, 800, 600);
+
+		}
+	}
+
+
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Conversation-->
+<img style="display: none" id="S1_C1" alt="Chapter 7" src="images/chapter7/scene1/S1_Con1.jpg">
+<img style="display: none" id="S1_C2" alt="Chapter 7" src="images/chapter7/scene1/S1_Con2.jpg">
+<img style="display: none" id="S1_C3" alt="Chapter 7" src="images/chapter7/scene1/S1_Con3.jpg">
+<img style="display: none" id="S1_C4" alt="Chapter 7" src="images/chapter7/scene1/S1_Con4.jpg">
+<img style="display: none" id="S1_C5" alt="Chapter 7" src="images/chapter7/scene1/S1_Con5.jpg">
+<img style="display: none" id="S1_C6" alt="Chapter 7" src="images/chapter7/scene1/S1_Con6.jpg">
+<img style="display: none" id="S1_C7" alt="Chapter 7" src="images/chapter7/scene1/S1_Con7.jpg">
+<img style="display: none" id="S1_C8" alt="Chapter 7" src="images/chapter7/scene1/S1_Con18.jpg">
+
+<!-- Words -->
+
+
+
+<!-- Audio -->
+
+<!-- Character -->
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

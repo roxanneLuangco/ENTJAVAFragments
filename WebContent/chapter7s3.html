@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 7</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+	var vimgBG, vimgM1, vimgM2, vimgM3,vimgM4;
+	var vimgBff;
+	var imgx = 0, imgy = 0;
+	
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		
+ 		vimgM1 = document.getElementById("S3_M1");
+ 		vimgM2 = document.getElementById("S3_M2");
+ 		vimgM3 = document.getElementById("S3_M3");
+ 		vimgM4 = document.getElementById("S3_M4");
+ 		
+ 		vimgBG = document.getElementById("S3_BG");
+ 		vimgBff = document.getElementById("S3_L1");
+
+
+
+ 		vcon.drawImage(vimgM1, 0, 0, 800, 600);
+ 				
+		setInterval("animate()", 800);	
+	}
+
+	
+	var ctr = 0;
+	function animate()
+	{
+		
+		ctr++;
+		
+		if (ctr == 0)
+		{	
+			vcon.drawImage(vimgM1, 0, 0, 800, 600);
+		}	
+		if (ctr == 1)
+		{	
+			vcon.drawImage(vimgM2, 0, 0, 800, 600);
+		}	
+		if (ctr == 2)
+		{	
+			vcon.drawImage(vimgM3, 0, 0, 800, 600);		
+		}	
+		if (ctr == 3)
+		{	
+			vcon.drawImage(vimgM4, 0, 0, 800, 600);	
+		}
+		if (ctr == 4)
+		{	
+			vcon.drawImage(vimgM1, 0, 0, 800, 600);
+		}	
+		if (ctr == 5)
+		{	
+			vcon.drawImage(vimgM2, 0, 0, 800, 600);
+		}	
+		if (ctr == 6)
+		{	
+			vcon.drawImage(vimgM3, 0, 0, 800, 600);		
+		}	
+		if (ctr == 7)
+		{	
+			vcon.drawImage(vimgM4, 0, 0, 800, 600);	
+			Lianne();
+		}
+	}
+	
+	function Lianne()
+	{
+		vcon.drawImage(vimgBG, 0, 0, 800, 600);	
+		vcon.drawImage(vimgBff, imgx, imgy, 569, 396, 0, 0, 800, 600);
+		setInterval("animateLianne()", 1500);
+	}
+	
+	var Lctr = 0;
+	function animateLianne()
+	{
+		Lctr++;
+		
+		if (Lctr > 7)
+		
+			
+			Lctr = 0;
+			imgx = Lctr * 569;
+			
+			vcon.drawImage(vimgBG, 0, 0, 800, 600);	
+			vcon.drawImage(vimgBff, imgx, imgy, 569, 396, 0, 0, 800, 600);	
+		
+	
+	}
+
+
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background-->
+<img style="display: none" id="S3_BG" alt="Chapter 7" src="images/chapter7/scene3/S3_Station.jpg">
+
+
+<!-- Matthew-->
+<img style="display: none" id="S3_M1" alt="Chapter 7" src="images/chapter7/scene3/S3_M1.jpg">
+<img style="display: none" id="S3_M2" alt="Chapter 7" src="images/chapter7/scene3/S3_M2.jpg">
+<img style="display: none" id="S3_M3" alt="Chapter 7" src="images/chapter7/scene3/S3_M3.jpg">
+<img style="display: none" id="S3_M4" alt="Chapter 7" src="images/chapter7/scene3/S3_M3.jpg">
+
+<!-- Lianne -->
+<img style="display: none" id="S3_L1" alt="Chapter 7" src="images/chapter7/scene3/S3_Lianne.png">
+
+
+<!-- Words -->
+
+
+
+<!-- Audio -->
+
+<!-- Character -->
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

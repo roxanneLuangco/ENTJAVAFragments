@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Fragments: Chapter 2</title>
+
+<script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgRoom, vimgInv1, vimgInv2, vimgInv3, vimgInv4;
+ 	var vimgWord1, vimgWord2;
+	var imgx = 0, imgy = 0;
+	
+
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+  
+ 		vimgRoom = document.getElementById("RoomBG"); 
+ 		vimgInv1 = document.getElementById("Inv1"); 
+ 		vimgInv2 = document.getElementById("Inv2"); 
+ 		vimgInv3 = document.getElementById("Inv3"); 
+ 		vimgInv4 = document.getElementById("Inv4"); 
+ 		
+ 		vimgWord1 = document.getElementById("Word1");
+ 		vimgWord2 = document.getElementById("Word2");
+ 		 		
+ 		vcon.drawImage(vimgRoom, 0, 0, 800, 600);	
+ 		vcon.drawImage(vimgInv1, -50, 20, 630, 595);
+ 		
+ 
+		setInterval("animateInv()", 800); 		
+			
+	}    
+
+	var ctr = 0;
+	function animateInv()
+	{
+	
+		ctr++;
+	
+		if (ctr == 0){
+			
+			vcon.drawImage(vimgInv1, -50, 20, 630, 595);
+			vcon.drawImage(vimgWord1, 60, 465, 680, 115);
+	}
+		if (ctr == 1){
+			
+			vcon.drawImage(vimgInv2, -50, 20, 630, 595);
+			vcon.drawImage(vimgWord1, 60, 465, 680, 115);
+	}
+		if (ctr == 2){
+
+			vcon.drawImage(vimgInv1, -50, 20, 630, 595);
+			vcon.drawImage(vimgWord1, 60, 465, 680, 115);
+		}
+		
+		if (ctr == 3){
+			
+			vcon.drawImage(vimgInv2, -50, 20, 630, 595);
+			vcon.drawImage(vimgWord1, 60, 465, 680, 115);
+	}
+		
+		if (ctr == 4){			
+					
+			vcon.drawImage(vimgInv1, -50, 20, 630, 595);
+			vcon.drawImage(vimgWord1, 60, 465, 680, 115);
+	}
+		
+		if (ctr == 5){
+			
+			vcon.drawImage(vimgInv3, -50, 20, 630, 595);
+			vcon.drawImage(vimgWord2, 60, 465, 680, 115);
+	}
+		
+		if (ctr == 6){
+			
+			vcon.drawImage(vimgInv4, -50, 20, 630, 595);
+			vcon.drawImage(vimgWord2, 60, 465, 680, 115);
+	}
+		
+		if (ctr == 7){
+			
+			vcon.drawImage(vimgInv3, -50, 20, 630, 595);
+			vcon.drawImage(vimgWord2, 60, 465, 680, 115);
+	}
+		
+		if (ctr == 8){
+			
+			vcon.drawImage(vimgInv4, -50, 20, 630, 595);
+			vcon.drawImage(vimgWord2, 60, 465, 680, 115);
+	}
+		
+		if (ctr == 9){
+			
+			ctr = 0;
+			
+			vcon.drawImage(vimgInv1, -50, 20, 630, 595);			
+			vcon.drawImage(vimgWord1, 60, 465, 680, 115);
+		}
+		
+	}
+	
+	
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Backgrounds -->
+<img style="display: none" id="RoomBG" alt="Chapter 2" src="images/chapter2/scene4/S4_Room.jpg">
+
+<!-- Words -->
+<img style="display: none" id="Word1" alt="Chapter 2" src="images/chapter2/scene4/C2S4_Word1.png">
+<img style="display: none" id="Word2" alt="Chapter 2" src="images/chapter2/scene4/C2S4_Word2.png">
+
+<!-- Audio -->
+
+
+<!-- Characters -->
+<img style="display: none" id="Inv1" alt="Chapter 2" src="images/chapter2/scene4/S4_Inv1.png">
+<img style="display: none" id="Inv2" alt="Chapter 2" src="images/chapter2/scene4/S4_Inv2.png">
+<img style="display: none" id="Inv3" alt="Chapter 2" src="images/chapter2/scene4/S4_Inv3.png">
+<img style="display: none" id="Inv4" alt="Chapter 2" src="images/chapter2/scene4/S4_Inv4.png">
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

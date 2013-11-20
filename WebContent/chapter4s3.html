@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 4</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgS1, vimgS2, vimgS3;
+ 	var vimgI1, vimgI2, vimgI3, vimgI4, vimgI5;
+ 	var vimgR1, vimgR2, vimgR3, vimgR4, vimgRtrans1, vimgRtrans2;
+ 	var vimgH, vimgFly, vimgHtrans1, vimgHtrans2;
+ 	var vimgC1, vimgC2, vimgC3, vimgC4, vimgC5, vimgCtrans1, vimgCtrans2;
+ 	var vimgFrame, vimgWall;
+
+	var imgx = 0, imgy = 0;
+
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+  		
+ 		//S
+ 		vimgS1 = document.getElementById("S_BG1");
+ 		vimgS2 = document.getElementById("S_BG2")
+ 		vimgS3 = document.getElementById("S_BG3")
+ 		
+ 		//I
+ 		vimgI1 = document.getElementById("I_BG1");
+ 		vimgI2 = document.getElementById("I_BG2");
+ 		vimgI3 = document.getElementById("I_BG3");
+ 		vimgI4 = document.getElementById("I_BG4");
+ 		vimgI5 = document.getElementById("I_BG5");
+	 	 		
+ 		//R
+ 		vimgR1 = document.getElementById("R_BG1");
+ 		vimgR2 = document.getElementById("R_BG2");
+ 		vimgR3 = document.getElementById("R_BG3");
+ 		vimgR4 = document.getElementById("R_BG4");
+ 		vimgRtrans1 = document.getElementById("R_BG5");
+ 		vimgRtrans2 = document.getElementById("R_BG6");
+ 	
+ 		//H
+ 		vimgH = document.getElementById("H_BG");
+ 		vimgFly = document.getElementById("H_Fly");
+ 		vimgHtrans1 = document.getElementById("H_Trans1");
+ 		vimgHtrans2 = document.getElementById("H_Trans2");
+ 		
+ 		//C
+ 		vimgC1 = document.getElementById("C_BG1");
+ 		vimgC2 = document.getElementById("C_BG2");
+ 		vimgC3 = document.getElementById("C_BG3");
+ 		vimgC4 = document.getElementById("C_BG4");
+ 		vimgC5 = document.getElementById("C_BG5");
+ 		vimgCtrans1 = document.getElementById("C_BGTrans1");
+ 		vimgCtrans2 = document.getElementById("C_BGTrans2");
+ 		
+ 		//Hint
+ 		vimgWall = document.getElementById("Wall");
+ 		vimgFrame = document.getElementById("Frame");
+ 		
+		vcon.drawImage(vimgS1, 0, 0, 800, 600);		
+ 		setInterval("ChangeS()", 1500); 		
+	
+	}
+	
+	var Sctr = 0;
+	function ChangeS()
+	{
+		Sctr++;
+		
+		if (Sctr == 0)
+		{
+			vcon.drawImage(vimgS1, 0, 0, 800, 600);
+		}
+		if (Sctr == 1)
+		{
+			vcon.drawImage(vimgS2, 0, 0, 800, 600);
+		}
+		if (Sctr == 2)
+		{
+			vcon.drawImage(vimgS3, 0, 0, 800, 600);
+		}
+		if (Sctr == 3)
+		{
+			vcon.drawImage(vimgI5, 0, 0, 800, 600);
+			ChangeI();
+		}
+	}
+	
+	function ChangeI()
+	{
+		vcon.drawImage(vimgI5, 0, 0, 800, 600);
+ 		setInterval("ChangeSceneI()", 1500);
+	}
+	
+	var Ictr = 0;
+	function ChangeSceneI()
+	{
+		Ictr++;
+		
+		if (Ictr == 0)
+		{
+			vcon.drawImage(vimgS1, 0, 0, 800, 600);
+		}
+		if (Ictr == 1)
+		{
+			vcon.drawImage(vimgI2, 0, 0, 800, 600);
+		}
+		if (Ictr == 2)
+		{
+			vcon.drawImage(vimgI3, 0, 0, 800, 600);
+		}
+		if (Ictr == 3)
+		{
+			vcon.drawImage(vimgI4, 0, 0, 800, 600);
+		}
+		
+		if (Ictr == 4)
+		{
+			vcon.drawImage(vimgRtrans1, 0, 0, 800, 600);
+			ChangeR();
+		}
+	
+	}
+	
+	function ChangeR()
+	{
+		vcon.drawImage(vimgRtrans2, 0, 0, 800, 600);
+ 		setInterval("ChangeSceneR()", 1500);
+	}
+	
+	var Rctr = 0;
+	function ChangeSceneR()
+	{
+		Rctr++;
+		
+		if (Rctr == 0)
+		{
+			vcon.drawImage(vimgRtrans2, 0, 0, 800, 600);
+		}
+		if (Rctr == 1)
+		{
+			vcon.drawImage(vimgR1, 0, 0, 800, 600);
+		}
+		if (Rctr == 2)
+		{
+			vcon.drawImage(vimgR2, 0, 0, 800, 600);
+		}
+		if (Rctr == 3)
+		{
+			vcon.drawImage(vimgR3, 0, 0, 800, 600);
+		}
+		if (Rctr == 4)
+		{
+			vcon.drawImage(vimgR4, 0, 0, 800, 600);		
+			ChangeH();
+		}
+		if (Rctr == 5)
+		{
+			vcon.drawImage(vimgHtrans1, 0, 0, 800, 600);		
+		}
+		if (Rctr == 6)
+		{
+			vcon.drawImage(vimgHtrans2, 0, 0, 800, 600);		
+			ChangeH();
+		}
+		
+	}
+	
+	function ChangeH()
+	{
+		vcon.drawImage(vimgH, 0, 0, 800, 600);		
+ 		vcon.drawImage(vimgFly, imgx, imgy, 700, 105, 60, 85, 600, 115);
+ 		
+ 		setInterval("ChangeSceneH()", 600);
+	}
+
+    var Hctr = 0;
+    var Hcounter = 1;
+    function ChangeSceneH()
+    {
+    	Hctr++;
+    	Hcounter++;
+    	
+    	if (Hcounter > 0 & Hcounter < 16)
+  		{
+    		imgx = Hctr * 270;
+    		
+    		vcon.drawImage(vimgH, 0, 0, 800, 600);
+    		vcon.drawImage(vimgFly, imgx, imgy, 270, 105, 60, 30, 400, 160);	
+  		}
+    	if (Hcounter == 16)
+    	{
+    		vcon.drawImage(vimgCtrans1, 0, 0, 800, 600);	
+    		ChangeC();
+    	}
+    }    
+
+	function ChangeC()
+	{
+		vcon.drawImage(vimgCtrans2, 0, 0, 800, 600);		
+ 		setInterval("ChangeSceneC()", 1500);
+	}
+    
+    var Cctr = 0;
+	function ChangeSceneC()
+	{
+		Cctr++;
+		
+		if (Cctr == 0)
+		{
+			vcon.drawImage(vimgCtrans2, 0, 0, 800, 600);
+		}
+		if (Cctr == 1)
+		{
+			vcon.drawImage(vimgC1, 0, 0, 800, 600);	
+		}
+		if (Cctr == 2)
+		{
+			vcon.drawImage(vimgC2, 0, 0, 800, 600);	
+		}
+		if (Cctr == 3)
+		{
+			vcon.drawImage(vimgC3, 0, 0, 800, 600);	
+		}
+		if (Cctr == 4)
+		{
+			vcon.drawImage(vimgC4, 0, 0, 800, 600);	
+		}
+		if (Cctr == 5)
+		{
+			vcon.drawImage(vimgC5, 0, 0, 800, 600);	
+		}
+		if (Cctr == 6)
+		{
+			stop();
+		}		
+	}
+	
+	function stop()
+	{
+		vcon.drawImage(vimgWall, 0, 0, 800, 600);
+		vcon.drawImage(vimgFrame, 0, 0, 413, 245, 150, 52, 413, 245);
+	}
+
+	
+	
+	
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- S -->
+<img style="display: none" id="S_BG1" alt="Chapter 4" src="images/chapter4/scene3/S/S3_bgS1.jpg">
+<img style="display: none" id="S_BG2" alt="Chapter 4" src="images/chapter4/scene3/S/S3_bgS2.jpg">
+<img style="display: none" id="S_BG3" alt="Chapter 4" src="images/chapter4/scene3/S/S3_bgS3.jpg">
+
+<!-- I -->
+<img style="display: none" id="I_BG1" alt="Chapter 4" src="images/chapter4/scene3/I/S3_bgI1.jpg">
+<img style="display: none" id="I_BG2" alt="Chapter 4" src="images/chapter4/scene3/I/S3_bgI2.jpg">
+<img style="display: none" id="I_BG3" alt="Chapter 4" src="images/chapter4/scene3/I/S3_bgI3.jpg">
+<img style="display: none" id="I_BG4" alt="Chapter 4" src="images/chapter4/scene3/I/S3_bgI4.jpg">
+<img style="display: none" id="I_BG5" alt="Chapter 4" src="images/chapter4/scene3/I/S3_bgITrans.jpg">
+
+<!-- H -->
+<img style="display: none" id="H_BG" alt="Chapter 4" src="images/chapter4/scene3/H/S3_bgH.jpg">
+<img style="display: none" id="H_Fly" alt="Chapter 4" src="images/chapter4/scene3/H/S3_Bttrfly.png">
+<img style="display: none" id="H_Trans1" alt="Chapter 4" src="images/chapter4/scene3/H/S3_bgHTrans1.jpg">
+<img style="display: none" id="H_Trans2" alt="Chapter 4" src="images/chapter4/scene3/H/S3_bgHTrans2.jpg">
+
+<!-- R -->
+<img style="display: none" id="R_BG1" alt="Chapter 4" src="images/chapter4/scene3/R/S3_bgR1.jpg">
+<img style="display: none" id="R_BG2" alt="Chapter 4" src="images/chapter4/scene3/R/S3_bgR2.jpg">
+<img style="display: none" id="R_BG3" alt="Chapter 4" src="images/chapter4/scene3/R/S3_bgR3.jpg">
+<img style="display: none" id="R_BG4" alt="Chapter 4" src="images/chapter4/scene3/R/S3_bgR4.jpg">
+<img style="display: none" id="R_BG5" alt="Chapter 4" src="images/chapter4/scene3/R/S3_bgRTrans1.jpg">
+<img style="display: none" id="R_BG6" alt="Chapter 4" src="images/chapter4/scene3/R/S3_bgRTrans2.jpg">
+
+
+<!-- C -->
+<img style="display: none" id="C_BG1" alt="Chapter 4" src="images/chapter4/scene3/C/S3_bgC1.jpg">
+<img style="display: none" id="C_BG2" alt="Chapter 4" src="images/chapter4/scene3/C/S3_bgC2.jpg">
+<img style="display: none" id="C_BG3" alt="Chapter 4" src="images/chapter4/scene3/C/S3_bgC3.jpg">
+<img style="display: none" id="C_BG4" alt="Chapter 4" src="images/chapter4/scene3/C/S3_bgC4.jpg">
+<img style="display: none" id="C_BG5" alt="Chapter 4" src="images/chapter4/scene3/C/S3_bgC5.jpg">
+<img style="display: none" id="C_BGTrans1" alt="Chapter 4" src="images/chapter4/scene3/C/S3_bgCTrans1.jpg">
+<img style="display: none" id="C_BGTrans2" alt="Chapter 4" src="images/chapter4/scene3/C/S3_bgCTrans2.jpg">
+
+<!-- Hint -->
+<img style="display: none" id="Wall" alt="Chapter 4" src="images/chapter4/scene2/S2_WallDecor.jpg">
+<img style="display: none" id="Frame" alt="Chapter 4" src="images/chapter4/scene2/S2_FramesHint.png">
+
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+
+<!-- Characters -->
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

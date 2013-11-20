@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 1</title>
+ 
+<style>
+
+	body {
+	
+	background-image: url("images/MainBG.jpg") ;
+	
+	}
+
+	
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon, vimgBG;
+ 	var imgx = 0, imgy = 0;
+ 
+ 	function loadImage() 
+ 	{
+ 	
+   	
+ 		vcanvas = document.getElementById("anicanvas");
+    	vcon = vcanvas.getContext("2d");
+     
+    	vimgBG = document.getElementById("canvasImage");
+
+	
+    	vcon.drawImage(canvasImage, imgx, imgy, 530, 374, 0, 0 , 800, 600);  
+            	
+    	var stop = setInterval("animate()", 1000)
+}	
+	var ctr = 0;
+    function animate()
+    {
+    	ctr++;       		
+    	    	
+    	if (ctr > 11)
+    		
+    		ctr = 0;
+    	
+    		imgx = ctr * 530; 		
+    		vcon.drawImage(canvasImage, imgx, imgy, 530, 374, 0, 0 , 800, 600);  
+    	
+    }
+    		
+</script>
+
+
+
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:8px; border-style:inset; border-color: black;" id ="anicanvas"> This Browser does not support HTML 5.</canvas>
+
+<!-- Backgrounds -->
+<img  style="display: none" id="canvasImage" alt="Scene 5" src="images/chapter1/scene5/CallingTrans.jpg">
+
+
+
+<!-- Description -->
+<p class="first" style="font-size: 20px; font-style: giorgia; color: silver;">
+Suddenly, a phone call was heard. 
+
+The look on Matthew's face was so heart breaking. He's very worried about Sunny's whereabouts. 
+He couldn't figure out why she would do this to him. His eyes were now filled with tears, but he's doing his best to keep them from falling. 
+
+It was Sunny's number which appeared on his phone screen. Full of excitement to know that Sunny was calling, Matthew immediately answered the call. 
+His face suddenly bloomed … but not too long, just as until when he heard someone else's voice. It was Sunny's maid.
+
+
+</p>
+
+<!-- Button -->
+
+<center>
+
+<button id = button1 onClick="location.href='Chap1Scene4.html'">Previous: Scene 4'></button>
+</center>
+
+
+
+
+</body>
+</html>

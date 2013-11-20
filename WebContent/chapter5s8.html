@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 5</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgTalk, vimgRoom;
+	var imgx = 0, imgy = 0;
+	
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		
+ 		vimgRoom = document.getElementById("S8_Room");
+ 		vimgTalk = document.getElementById("S8_Talk");
+
+ 		
+		vcon.drawImage(vimgRoom, 0, 0, 800, 600);	
+		vcon.drawImage(vimgTalk, imgx, imgy, 552, 392, 0, 0, 590, 600);
+		
+		//setInterval("animateTalk()", 500);	
+	}
+	
+	var ctr = 0;
+
+	function animateTalk()
+	{
+		ctr++;
+		
+		if (ctr > 4 )
+			
+			ctr = 0;
+			imgx = ctr * 552;
+		
+			vcon.drawImage(vimgRoom, 0, 0, 800, 600);	
+			vcon.drawImage(vimgTalk, imgx, imgy, 552, 392, 0, 0, 590, 600);
+	}
+	
+	
+	
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+<img style="display: none" id="S8_Room" alt="Chapter 5" src="images/chapter5/scene8/S8_InvRoom.jpg">
+
+
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+<!-- Character -->
+<img style="display: none" id="S8_Talk" alt="Chapter 5" src="images/chapter5/scene8/S8_ChrisTalk.png">
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

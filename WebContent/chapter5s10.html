@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 5</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgMirror, vimgFrame;
+	var imgx = 0, imgy = 0;
+	
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		
+ 		vimgMirror = document.getElementById("S10_Mirror");
+ 		vimgFrame = document.getElementById("S10_Frame");
+
+ 		
+		vcon.drawImage(vimgMirror, 0, 0, 800, 600);	
+		vcon.drawImage(vimgFrame, imgx, imgy, 435, 325, 70, 20, 300, 300);
+		
+		setInterval("animate()", 500);	
+	}
+	
+	var ctr = 0;
+
+	function animate()
+	{
+		ctr++;
+		
+		if (ctr > 3)
+			
+			ctr = 0;
+			imgx = ctr * 435;
+		
+			vcon.drawImage(vimgMirror, 0, 0, 800, 600);	
+			vcon.drawImage(vimgFrame, imgx, imgy, 435, 325, 70, 20, 300, 300);
+	}
+	
+	
+	
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+<img style="display: none" id="S10_Mirror" alt="Chapter 5" src="images/chapter5/scene10/S10_MirrorMatt.jpg">
+
+<!-- Frame -->
+<img style="display: none" id="S10_Frame" alt="Chapter 5" src="images/chapter5/scene10/S10_Frame.png">
+
+
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+<!-- Character -->
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

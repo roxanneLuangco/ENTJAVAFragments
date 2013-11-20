@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 1</title>
+ 
+<link rel="stylesheet" href="main.css">
+ 
+	<h1><img src="Border.png" alt= "Border1" title=""></h1>
+    <h2><img src="MainHeader.png" alt="Fragments: Main Header" title=""></h2> 
+    <h3><img src="Border.png" alt= "Border2" title=""></h3>
+ 
+ 
+ <script type="text/javascript">
+
+        var vcanvas, vcon, vimgBG1, vimgBG2, vingBG3, vimg1, vword;
+        var imgx = 0, imgy = 0;
+        
+        function loadImage() 
+        {
+        	
+          	
+        	vcanvas = document.getElementById("anicanvas");
+            vcon = vcanvas.getContext("2d");
+            
+            vimgBG1 = document.getElementById("BG1");
+            vimgBG2 = document.getElementById("BG2");
+            vimgBG3 = document.getElementById("BG3");
+            
+            vimg1 = document.getElementById("Sunny");     
+            vword = document.getElementById("Word"); 
+            
+           	vcon.drawImage(vimgBG1, 0, 0, 1200, 650); 
+           	vcon.drawImage(vword, 20, 25, 300, 60);
+           	
+            //vcon.drawImage(vimg1, imgx, imgy, 358, 415, 150, 170, 380, 480);         
+     
+        	setInterval("changeBG1()", 1200);  
+        
+    }
+       
+        function changeBG1()
+        {
+        	   		    		
+    		vcon.drawImage(vimgBG2, 0, 0, 800, 600);
+    		setInterval("changeBG2()", 1200);    		
+    }
+        
+        function changeBG2()
+        {
+        	   		    		
+        	vcon.drawImage(vimgBG3, 0, 0, 800, 600);
+        	vcon.drawImage(vimg1, imgx, imgy, 358, 415, 150, 170, 380, 480); 
+        	setInterval("animate()", 2500); 
+    		
+    }        
+    
+	var counter = 0;
+    
+    function animate()
+    {
+    	counter++;   
+    	    	
+    	if (counter > 3)
+    		
+    		counter = 0;
+    		imgx = counter * 358;   		
+		 		        		
+    		vcon.drawImage(vimgBG3, 0, 0, 800, 600); 
+            vcon.drawImage(vimg1, imgx, imgy, 358, 415, 150, 170, 380, 480);
+
+    }
+    
+	    
+</script>
+
+</head>
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:8px; border-style:inset; border-color: black;" id ="anicanvas"> This Browser does not support HTML 5.</canvas>
+
+<!-- Backgrounds -->
+<img style="display: none" id="BG1" alt="Scene 1" src="images/chapter1/scene1/BldgSunny.jpg">
+<img style="display: none" id="BG2" alt="Scene 1" src="images/chapter1/scene1/ApartmentRoom_Trans.jpg">
+<img style="display: none" id="BG3" alt="Scene 1" src="images/chapter1/scene1/ApartmentRoom_Sunny.jpg">
+
+
+<!-- Characters -->
+<img style="display: none" id="Sunny" alt="Scene 1" src="images/chapter1/scene1/C1S1_Sunny.png">
+
+<!-- Word -->
+<img style="display: none" id="Word" alt="Scene 1" src="images/chapter1/scene1/C1S1_word.png">
+
+<!-- Description -->
+<p class="first" style="font-size: 25px; font-style: giorgia; color: silver;">
+The night of February 13th was her last night as Miss Sunny Paine, since tomorrow she'll be officially Mrs. Sunny Sirhc. 
+That night, everything felt so perfect. The wedding preparations were all done, and the only thing left was her wedding ceremony. 
+</p>
+
+<!-- Button -->
+
+<center>
+
+<button id = button1 onClick="location.href='Prologue.html'">Previous: Prologue'></button>
+
+<button id = button2 onClick="location.href='Chap1Scene2.html'">Next: Scene 2'></button>
+</center>
+
+
+<!---MENU BAR ---->
+    <ul id="options" class="MenuBarVertical">
+        
+        <li><a class="MenuBarItemSubmenu" href="#">Home</a></li> 
+        <li><a class="MenuBarItemSubmenu" href="#">About</a></li> 
+        <li><a class="MenuBarItemSubmenu" href="#">Chapters</a>
+            <ul>
+                <li><a href="#">Prologue</a></li>
+                <li><a href="#">Chapter 1: The Disaster's Beginning</a></li>
+                <li><a href="#">Chapter 2: Her Mysterious Death</a></li>
+                <li><a href="#">Chapter 3: Glimpse of Hope</a></li>
+                <li><a href="#">Chapter 4: How Can This Be?</a></li>
+                <li><a href="#">Chapter 5: Colors of Expression</a></li>
+                <li><a href="#">Chapter 6: More Painful Than Pain</a></li>
+                <li><a href="#">Chapter 7: The Voice of My Heart</a></li>
+                <li><a href="#">Epilogue</a></li>
+            </ul>
+       <li>
+       <li>
+       <li><a class="MenuBarItemSubmenu" href="#">Authors</a></li> 
+        </li>
+    </ul>
+    <!---End of MENU BAR ---->
+
+</body>
+</html>

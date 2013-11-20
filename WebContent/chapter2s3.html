@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Fragments: Chapter 2</title>
+
+<script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgMatt, vimgBG1, vimgBG2, vimgBG3;
+	var imgx = 0, imgy = 0;
+	
+
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+  
+ 		vimgBG1 = document.getElementById("BG1"); 
+ 		vimgBG2 = document.getElementById("BG2"); 
+ 		vimgBG3 = document.getElementById("BG3"); 
+ 	
+ 		vimgMatt= document.getElementById("Matt"); 
+ 		 		
+ 		vcon.drawImage(vimgBG1, 0, 0, 800, 600);
+ 		vcon.drawImage(vimgMatt, -20, 100, 350, 500);
+ 		
+ 		setInterval("animate()", 1000); 		
+	}
+	
+	var ctr = 0;		
+	function animate()
+	{
+			
+		ctr++;   
+    	
+		if (ctr == 0)
+		{
+			vcon.drawImage(vimgBG1, 0, 0, 800, 600);
+			vcon.drawImage(vimgMatt, -20, 100, 350, 500);
+		}
+		if (ctr == 1)
+		{
+			vcon.drawImage(vimgBG2, 0, 0, 800, 600);
+			vcon.drawImage(vimgMatt, -20, 100, 350, 500);
+		}
+		if (ctr == 2)
+		{
+			ctr = 0;
+			vcon.drawImage(vimgBG3, 0, 0, 800, 600);
+			vcon.drawImage(vimgMatt, -20, 100, 350, 500);
+		}
+				
+	}
+	
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Backgrounds -->
+<img style="display: none" id="BG1" alt="Chapter 2" src="images/chapter2/scene3/S3_BG1.jpg">
+<img style="display: none" id="BG2" alt="Chapter 2" src="images/chapter2/scene3/S3_BG2.jpg">
+<img style="display: none" id="BG3" alt="Chapter 2" src="images/chapter2/scene3/S3_BG3.jpg">
+<!-- Words -->
+
+
+<!-- Audio -->
+
+
+<!-- Characters -->
+
+
+<!-- Clock -->
+<img style="display: none" id="Matt" alt="Chapter 2" src="images/chapter2/scene3/angry.png">
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

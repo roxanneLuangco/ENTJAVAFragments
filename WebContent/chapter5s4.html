@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 4</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgB2, vimgB3, vimgB4;
+ 	var vimgC1, vimgC2, vimgC3, vimgC4, vimgC5,vimgC6;
+ 	var vimgT1, vimgT2;
+	var imgx = 0, imgy = 0;
+
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		vimgB2 = document.getElementById("S4_B2");
+ 		vimgB3 = document.getElementById("S4_B3");
+ 		vimgB4 = document.getElementById("S4_B4");	
+ 		
+ 		vimgC1 = document.getElementById("S4_C1");	
+ 		vimgC2 = document.getElementById("S4_C2");	
+ 		vimgC3 = document.getElementById("S4_C3");	
+ 		vimgC4 = document.getElementById("S4_C4");	
+ 		vimgC5 = document.getElementById("S4_C5");	
+ 		vimgC6 = document.getElementById("S4_C6");	
+ 		
+ 		vimgT1 = document.getElementById("S4_T1");	
+ 		vimgT2 = document.getElementById("S4_T2");	
+
+ 		
+		vcon.drawImage(vimgB2, 0, 0, 800, 600);	
+		
+		setInterval("animate()", 1500);	
+	}
+		
+	var ctr = 0;
+	function animate()
+	{
+		ctr++;
+		
+		if (ctr == 0)
+		{	
+			vcon.drawImage(vimgB2, 0, 0, 800, 600);
+		}	
+		if (ctr == 1)
+		{	
+			vcon.drawImage(vimgB3, 0, 0, 800, 600);
+		}	
+		if (ctr == 2)
+		{	
+			vcon.drawImage(vimgB4, 0, 0, 800, 600);
+		}	
+		if (ctr == 3)
+		{	
+			vcon.drawImage(vimgT1, 0, 0, 800, 600);
+		}	
+		if (ctr == 4)
+		{	
+			vcon.drawImage(vimgT2, 0, 0, 800, 600);
+		}	
+		if (ctr == 5)
+		{	
+			vcon.drawImage(vimgC1, 0, 0, 800, 600);
+		}	
+		if (ctr == 6)
+		{	
+			vcon.drawImage(vimgC2, 0, 0, 800, 600);
+		}	
+		if (ctr == 7)
+		{	
+			vcon.drawImage(vimgC3, 0, 0, 800, 600);
+		}	
+		if (ctr == 8)
+		{	
+			vcon.drawImage(vimgC4, 0, 0, 800, 600);
+		}	
+		if (ctr == 9)
+		{	
+			vcon.drawImage(vimgC5, 0, 0, 800, 600);
+		}	
+		if (ctr == 10)
+		{	
+			ctr = 0;
+			vcon.drawImage(vimgC6, 0, 0, 800, 600);
+		}	
+	}
+	
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+<!-- Comfort -->
+<img style="display: none" id="S4_C1" alt="Chapter 5" src="images/chapter5/scene4/S4_Comfort1.jpg">
+<img style="display: none" id="S4_C2" alt="Chapter 5" src="images/chapter5/scene4/S4_Comfort2.jpg">
+<img style="display: none" id="S4_C3" alt="Chapter 5" src="images/chapter5/scene4/S4_Comfort3.jpg">
+<img style="display: none" id="S4_C4" alt="Chapter 5" src="images/chapter5/scene4/S4_Comfort4.jpg">
+<img style="display: none" id="S4_C5" alt="Chapter 5" src="images/chapter5/scene4/S4_Comfort5.jpg">
+<img style="display: none" id="S4_C6" alt="Chapter 5" src="images/chapter5/scene4/S4_Comfort6.jpg">
+
+
+<!-- Break Up -->
+<img style="display: none" id="S4_B2" alt="Chapter 5" src="images/chapter5/scene4/S4_BreakUp2.jpg">
+<img style="display: none" id="S4_B3" alt="Chapter 5" src="images/chapter5/scene4/S4_BreakUp3.jpg">
+<img style="display: none" id="S4_B4" alt="Chapter 5" src="images/chapter5/scene4/S4_BreakUp4.jpg">
+
+<img style="display: none" id="S4_T1" alt="Chapter 5" src="images/chapter5/scene4/S4_BreakTrans1.jpg">
+<img style="display: none" id="S4_T2" alt="Chapter 5" src="images/chapter5/scene4/S4_BreakTrans2.jpg">
+
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

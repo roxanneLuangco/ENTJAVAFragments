@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 4</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgB1, vimgB2, vimgB3, vimgB4;
+ 	var vimgRain;
+
+	var imgx = 0, imgy = 0;
+
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		vimgB1 = document.getElementById("S3_B1");
+ 		vimgB2 = document.getElementById("S3_B2");
+ 		vimgB3 = document.getElementById("S3_B3");
+ 		vimgB4 = document.getElementById("S3_B4");		
+ 		
+ 		vimgRain = document.getElementById("S3_Rain");
+ 		
+		vcon.drawImage(vimgB1, 0, 0, 800, 600);	
+		vcon.drawImage(vimgRain, imgx, imgy, 384, 300, 0, 0, 800, 600);
+		
+		setInterval("animateRain()", 300);	
+	}
+		
+	var rainCtr = 0;
+	var bgCtr = 0;
+	function animateRain()
+	{
+		rainCtr++;
+		bgCtr++;
+		
+		if (rainCtr > 2)
+			
+			rainCtr = 0;
+			imgx = rainCtr * 384;
+			
+			vcon.drawImage(vimgB1, 0, 0, 800, 600);	
+			vcon.drawImage(vimgRain, imgx, imgy, 384, 300, 0, 0, 800, 600);
+				
+	}
+	
+	
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+<!-- Rain -->
+<img style="display: none" id="S3_Rain" alt="Chapter 5" src="images/chapter5/scene3/S3_Rain.png">
+
+
+<!-- Break Up -->
+<img style="display: none" id="S3_B1" alt="Chapter 5" src="images/chapter5/scene3/S3_BreakUp1.jpg">
+<img style="display: none" id="S3_B2" alt="Chapter 5" src="images/chapter5/scene3/S3_BreakUp2.jpg">
+<img style="display: none" id="S3_B3" alt="Chapter 5" src="images/chapter5/scene3/S3_BreakUp3.jpg">
+<img style="display: none" id="S3_B4" alt="Chapter 5" src="images/chapter5/scene3/S3_BreakUp4.jpg">
+
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

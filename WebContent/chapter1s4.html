@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 1</title>
+ 
+<style>
+
+	body {
+	
+	background-image: url("images/MainBG.jpg") ;
+	
+	}
+
+	
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon, vimgBG, vimgClock;
+ 	var imgx = 0, imgy = 0;
+ 
+ 	function loadImage() 
+ 	{
+ 	
+   	
+ 		vcanvas = document.getElementById("anicanvas");
+    	vcon = vcanvas.getContext("2d");
+     
+    	vimgBG = document.getElementById("canvasImage");
+    	vimgClock = document.getElementById("Clock");
+
+    	vcon.drawImage(vimgBG, 0, 0, 1000, 600);     	
+    	vcon.drawImage(vimgClock, imgx, imgy, 450, 386, 0, 0, 450, 386);  
+            	
+    	var stop = setInterval("animate()", 1000)
+}	
+ 	var ctr = 0;
+    function animate()
+    {
+    	ctr++;       		
+    	    	
+    	if (ctr > 4)
+    		
+    		ctr = 0;
+    	
+    		imgx = ctr * 450; 		
+    		vcon.drawImage(vimgClock, imgx, imgy, 450, 386, 0, 0, 450, 386);       
+
+    	
+    }
+    		
+</script>
+
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:8px; border-style:inset; border-color: black;" id ="anicanvas"> This Browser does not support HTML 5.</canvas>
+
+<!-- Backgrounds -->
+<img  style="display: none" id="canvasImage" alt="Scene 4" src="images/chapter1/scene4/C1S3_Matthew.png">
+
+<!-- Clock -->
+<img style="display: none" id="Clock" alt="scene 4" src="images/chapter1/scene4/WallClockWed.png">
+
+
+<!-- Description -->
+<p class="first" style="font-size: 20px; font-style: giorgia; color: silver;">
+Thirty minutes have passed, still, there's no sign of the bride. 
+
+The look on Matthew's face was so heartbreaking. He's very worried about Sunny's whereabouts. 
+He couldn't figure out why she would do this to him. His eyes were now filled with tears, but he's doing his best to keep them from falling. 
+</p>
+
+<!-- Button -->
+
+<center>
+
+<button id = button1 onClick="location.href='Chap1Scene3.html'">Previous: Scene 3'></button>
+
+<button id = button2 onClick="location.href='Chap1Scene5.html'">Next: Scene 5'></button>
+</center>
+
+</body>
+</html>

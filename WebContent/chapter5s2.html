@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 4</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgchar1, vimgchar2, vimgchar3, vimgchar4;
+ 	var vimgSC1, vimgSC2,vimgSC3;
+ 	var vimgSun1, vimgSun2, vimgSun3;
+
+	var imgx = 0, imgy = 0;
+
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		vimgchar1 = document.getElementById("S2_char1");
+ 		vimgchar2 = document.getElementById("S2_char2");
+ 		vimgchar3 = document.getElementById("S2_char3");
+ 		vimgchar4 = document.getElementById("S2_char4");
+ 	
+ 		vimgSun1 = document.getElementById("S2_Sun1");
+ 		vimgSun2 = document.getElementById("S2_Sun2");
+ 		vimgSun3 = document.getElementById("S2_Sun3");
+ 		
+ 		vimgSC1 = document.getElementById("S2_SC1");
+ 		vimgSC2 = document.getElementById("S2_SC2");
+ 		vimgSC3 = document.getElementById("S2_SC3");
+ 		
+		vcon.drawImage(vimgSun1, 0, 0, 800, 600);	
+		
+		setInterval("animate()", 1500);
+	
+	}
+	
+	var ctr = 0;
+	function animate()
+	{
+		ctr++;
+		
+		if (ctr == 0)
+		{
+			vcon.drawImage(vimgSun1, 0, 0, 800, 600);	
+		}
+		if (ctr == 1)
+		{
+			vcon.drawImage(vimgSun2, 0, 0, 800, 600);	
+		}
+		if (ctr == 2)
+		{
+			vcon.drawImage(vimgSun3, 0, 0, 800, 600);	
+		}
+		if (ctr == 3)
+		{
+			vcon.drawImage(vimgchar1, 0, 0, 800, 600);	
+		}
+		if (ctr == 4)
+		{
+			vcon.drawImage(vimgchar2, 0, 0, 800, 600);	
+		}
+		if (ctr == 5)
+		{
+			vcon.drawImage(vimgchar3, 0, 0, 800, 600);	
+		}
+		if (ctr == 6)
+		{
+			vcon.drawImage(vimgchar4, 0, 0, 800, 600);	
+		}
+		if (ctr == 7)
+		{
+			vcon.drawImage(vimgSC1, 0, 0, 800, 600);	
+		}
+		if (ctr == 8)
+		{
+			vcon.drawImage(vimgSC2, 0, 0, 800, 600);	
+		}
+		if (ctr == 9)
+		{
+			ctr = 0;
+			vcon.drawImage(vimgSC3, 0, 0, 800, 600);	
+		}
+	}
+	
+	
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+
+<!-- Characters -->
+<img style="display: none" id="S2_char1" alt="Chapter 5" src="images/chapter5/scene2/S2_Char1.png">
+<img style="display: none" id="S2_char2" alt="Chapter 5" src="images/chapter5/scene2/S2_Char2.png">
+<img style="display: none" id="S2_char3" alt="Chapter 5" src="images/chapter5/scene2/S2_Char3.png">
+<img style="display: none" id="S2_char4" alt="Chapter 5" src="images/chapter5/scene2/S2_Char4.png">
+
+<img style="display: none" id="S2_Sun1" alt="Chapter 5" src="images/chapter5/scene2/S2_Sunny1.jpg">
+<img style="display: none" id="S2_Sun2" alt="Chapter 5" src="images/chapter5/scene2/S2_Sunny2.jpg">
+<img style="display: none" id="S2_Sun3" alt="Chapter 5" src="images/chapter5/scene2/S2_Sunny3.jpg">
+
+<img style="display: none" id="S2_SC1" alt="Chapter 5" src="images/chapter5/scene2/S2_SunChris1.png">
+<img style="display: none" id="S2_SC2" alt="Chapter 5" src="images/chapter5/scene2/S2_SunChris2.png">
+<img style="display: none" id="S2_SC3" alt="Chapter 5" src="images/chapter5/scene2/S2_SunChris3.png">
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

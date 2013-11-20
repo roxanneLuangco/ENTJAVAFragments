@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 4</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgBG, vimgInv;
+
+	var imgx = 0, imgy = 0;
+
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		vimgBG = document.getElementById("S4_BG");
+ 		vimgInv = document.getElementById("S4_Inv");
+ 		
+ 		
+		vcon.drawImage(vimgBG, 0, 0, 800, 600);	
+		vcon.drawImage(vimgInv, imgx, imgy, 188, 290, 395, 40, 188, 290);	
+ 		
+		setInterval("animate()", 800);
+	
+	}
+	
+	var ctr = 0;
+	function animate()
+	{
+		ctr++;
+		
+		if (ctr > 1)
+		
+			ctr = 0;
+			imgx = ctr * 188;
+			
+			vcon.drawImage(vimgBG, 0, 0, 800, 600);
+			vcon.drawImage(vimgInv, imgx, imgy, 188, 290, 395, 40, 188, 290);
+		
+		
+	}
+	
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+<img style="display: none" id="S4_BG" alt="Chapter 4" src="images/chapter4/scene4/S4_BG.jpg">
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+
+<!-- Characters -->
+<img style="display: none" id="S4_Inv" alt="Chapter 4" src="images/chapter4/scene4/S4_Investigator.png">
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>

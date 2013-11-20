@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments: Chapter 6</title>
+ 
+<style>
+
+	
+</style> 
+ 
+ <script type="text/javascript">
+
+ 	var vcanvas, vcon;
+ 	var vimgV1, vimgV2, vimgV3, vimgV4, vimgV5, vimgV6,vimgV7;
+ 	var vimgVideo;
+	var imgx = 0, imgy = 0;
+	
+	function loadImage() 
+	{
+		
+		vcanvas = document.getElementById("anicanvas");
+ 		vcon = vcanvas.getContext("2d");
+
+ 		
+ 		vimgV1 = document.getElementById("S3_Vid1");
+ 		vimgV2 = document.getElementById("S3_Vid2");
+ 		vimgV3 = document.getElementById("S3_Vid3");
+ 		vimgV4 = document.getElementById("S3_Vid4");
+ 		vimgV5 = document.getElementById("S3_Vid5");
+ 		vimgV6 = document.getElementById("S3_Vid6");
+ 		vimgV7 = document.getElementById("S3_Vid7");
+ 		
+ 		vimgVideo = document.getElementById("S3_Vid");
+
+ 		
+		vcon.drawImage(vimgV1, 0, 0, 800, 600);	
+		
+		setInterval("animate()", 1500);	
+	}
+		
+	var ctr = 0;
+	function animate()
+	{
+		ctr++;
+		
+		if (ctr == 0)
+		{	
+			vcon.drawImage(vimgV1, 0, 0, 800, 600);		
+		}	
+		if (ctr == 1)
+		{	
+			vcon.drawImage(vimgV2, 0, 0, 800, 600);		
+		}	
+		if (ctr == 2)
+		{	
+			vcon.drawImage(vimgV3, 0, 0, 800, 600);			
+		}	
+		if (ctr == 3)
+		{	
+			vcon.drawImage(vimgV4, 0, 0, 800, 600);			
+		}
+		if (ctr == 4)
+		{	
+			vcon.drawImage(vimgV5, 0, 0, 800, 600);	
+		}
+		if (ctr == 5)
+		{	
+			vcon.drawImage(vimgV6, 0, 0, 800, 600);	
+		}
+		if (ctr == 6)
+		{	
+			vcon.drawImage(vimgV7, 0, 0, 800, 600);	
+			Video();
+		}
+	}
+	
+	function Video()
+	{
+		vcon.drawImage(vimgV7, 0, 0, 800, 600);
+		vcon.drawImage(vimgVideo, imgx, imgy, 204, 125, 300, 120, 204, 125);
+		setInterval("animateVideo()", 1000);
+	}
+	
+	var Vctr = 0;
+	function animateVideo()
+	{
+		
+		Vctr++;
+		
+		if (Vctr > 4)
+			
+			Vctr = 0;
+			imgx = Vctr * 204;
+			
+			vcon.drawImage(vimgV7, 0, 0, 800, 600);
+			vcon.drawImage(vimgVideo, imgx, imgy, 204, 125, 300, 120, 204, 125);
+	}
+	
+
+
+
+    
+</script>
+
+ 
+</head>
+
+
+<body style="text-align: center" onload = "loadImage()">
+
+
+<canvas width ="800" height="600" style = "border-width:5px; border-style:inset; border-color: black;" id ="anicanvas"> 
+This Browser does not support HTML 5.
+</canvas>
+
+<!-- Background -->
+<img style="display: none" id="S3_Vid1" alt="Chapter 6" src="images/chapter6/scene3/S3_Video1.jpg">
+<img style="display: none" id="S3_Vid2" alt="Chapter 6" src="images/chapter6/scene3/S3_Video2.jpg">
+<img style="display: none" id="S3_Vid3" alt="Chapter 6" src="images/chapter6/scene3/S3_Video3.jpg">
+<img style="display: none" id="S3_Vid4" alt="Chapter 6" src="images/chapter6/scene3/S3_Video4.jpg">
+<img style="display: none" id="S3_Vid5" alt="Chapter 6" src="images/chapter6/scene3/S3_Video5.jpg">
+<img style="display: none" id="S3_Vid6" alt="Chapter 6" src="images/chapter6/scene3/S3_Video6.jpg">
+<img style="display: none" id="S3_Vid7" alt="Chapter 6" src="images/chapter6/scene3/S3_Video7.jpg">
+
+
+<!-- Words -->
+
+
+<!-- Audio -->
+
+<!-- Character -->
+<img style="display: none" id="S3_Vid" alt="Chapter 6" src="images/chapter6/scene3/S3_Video.png">
+
+
+<!-- Description -->
+
+
+<!-- Button -->
+
+
+
+
+</body>
+</html>
